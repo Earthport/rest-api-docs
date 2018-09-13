@@ -1,0 +1,135 @@
+## Webhooks
+
+Use webhooks to be notified about events occurring on your account.
+
+Earthport can send webhook events that notify your application any time an event happens on your account. This is especially useful for events - like when a payment is rejected or returned, or when a deposit is made to your account.
+
+Webhooks are sent asynchronously and are not guaranteed to be delivered in order. We recommend that applications protect against duplicated events by making event processing idempotent.
+
+* You must use SSL/TLS for webhook URLs. Unsecured webhook URLs are only allowed in the sandbox environment.
+* Webhooks include an Origin header indicating which Earthport environment they were sent from. This will be https://api.earthport.com for production, and https://api-sandbox.earthport.com for sandbox.
+* Webhooks with an invalid signature must return a 498 Token Invalid error.
+* You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91)
+
+
+### Signing webhooks
+
+Earthport signs the body of the POST request with an HMAC SHA256 digest, using the client id and secret key of the client.
+
+This signature is then set in an HTTP Header *Earthport-Signature* along with the HTTP Header *Client-Id*.
+
+### Acknowledgement and retries
+
+When your application receives a webhook, it should respond with an HTTP 200 status code to indicate successful receipt. If Earthport receives a status code other than 200, or your application fails to provide a valid respond within 60 seconds of the attempt, another attempt will be made.
+
+Earthport will re-attempt delivery every 15 minutes over the course of 24 hours.
+
+We need to respond with the following format:
+
+```json
+{
+   "ackMessage":"DONE",
+   "epTransactionID":281474990733677
+}
+``` 
+
+### Webhook event types
+
+#### Deposit event
+
+```
+{
+  "notificationType": "DEPOSIT",
+  "epUserID": 3430090154193,
+  "merchantUserIdentity": "cptt001",
+  "epTransactionID": 281474990733677,
+  "timestamp": "2015-02-03T09:34:43.193+00:00",
+  "managedMerchantIdentity": "Contracting Merchant User",
+  "depositAmount": {
+    "currency": "EUR",
+    "amount": 12.5
+  },
+  "depositedAmount": {
+    "currency": "GBP",
+    "amount": 10.26
+  }
+}
+```
+
+#### Rejected Payout event
+
+```
+{
+  "notificationType": "REJECTED_PAYOUT",
+  "epUserID": 3430090154301,
+  "merchantUserIdentity": "119TUOC87NPCK",
+  "epTransactionID": 281474990733689,
+  "timestamp": "2015-02-03T18:22:07.211+00:00",
+  "managedMerchantIdentity": "Contracting Merchant User",
+  "refundedAmount": {
+    "currency": "GBP",
+    "amount": 100
+  },
+  "payoutAmount": {
+    "currency": "GBP",
+    "amount": 100
+  },
+  "payoutTransactionID": {
+    "epTransactionID": 281474990732857,
+    "merchantTransactionID": "IntegrationTest:11903175"
+  },
+  "epBankID": 9670429,
+  "reason": " Account Address invalid . BE04",
+  "reasonID": 101
+}
+```
+
+#### Refund event
+
+```
+{
+  "notificationType": "REFUND",
+  "epUserID": 3430090154193,
+  "merchantUserIdentity": "cptt001",
+  "epTransactionID": 281474990733696,
+  "timestamp": "2015-02-03T18:35:13.485+00:00",
+  "managedMerchantIdentity": "Contracting Merchant User",
+  "refundedAmount": {
+    "currency": "EUR",
+    "amount": 58.32
+  },
+  "payoutAmount": {
+    "currency": "EUR",
+    "amount": 60.15
+  },
+  "payoutTransactionID": {
+    "epTransactionID": 281474990733691,
+    "merchantTransactionID": "ccttfx01g"
+  },
+  "epBankID": 9670420,
+  "reason": " Account Address invalid . BE04",
+  "reasonID": 111
+}
+```
+
+#### Payment Sent event
+
+```
+{
+  "notificationType": "PAYMENT_SENT",
+  "epUserID": 3430090240848,
+  "merchantUserIdentity": "1DBWSBQ1EPF78",
+  "epTransactionID": 281475041370930,
+  "timestamp": "2018-05-25T15:48:58.788+01:00",
+  "managedMerchantIdentity": "Contracting Merchant User",
+  "payoutTransactionID": {
+    "epTransactionID": 281475041370930,
+    "merchantTransactionID": "IntegrationTest:62537498"
+  },
+  "payoutRequestAmount": {
+    "currency": "GBP",
+    "amount": 145.32
+  },
+  "epBankID": 21068999
+}
+```
