@@ -16,3 +16,12 @@ We recommend that you:-
 3. Download the appropriate language SDK and call our APIs from your local developer machine
 4. You can test our webhooks using the simulator
 5. Once you've carried out the above then you're ready to integrate our APIs into your system(s).
+
+### How to download SDKs
+
+At the top right hand coner of this documentation, is a list box of supported languages ![alt text](https://github.com/Earthport/rest-api-docs/images/list_languages.png "List of programming languages")
+
+Choose your programming language from the list, e.g. Java
+This will then load up Java specific help pages within the documentation. You will see various menu options on the left: ![alt text](https://github.com/Earthport/rest-api-docs/images/selected_language_java.png "List of Java related documentation")
+
+If you look at the top right hand corner of the screen, you will see a download button where you can download the SDK in this case a Java SDK. ![alt text](https://github.com/Earthport/rest-api-docs/images/download_sdk.png "Download SDK")
