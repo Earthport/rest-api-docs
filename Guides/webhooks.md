@@ -7,7 +7,7 @@ Earthport can send webhook events that notify your application any time an event
 Webhooks are sent asynchronously and are not guaranteed to be delivered in order. We recommend that applications protect against duplicated events by making event processing idempotent.
 
 * You must use SSL/TLS for webhook URLs. Unsecured webhook URLs are only allowed in the sandbox environment.
-* Webhooks include an Origin header indicating which Earthport environment they were sent from. This will be https://api.earthport.com for production, and https://api-sandbox.earthport.com for sandbox.
+* Webhooks include an Origin header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
 * Webhooks with an invalid signature must return a 498 Token Invalid error.
 * You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91)
 
