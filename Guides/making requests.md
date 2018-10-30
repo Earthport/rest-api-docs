@@ -7,9 +7,9 @@ You will need to ensure you are using TLS v1.2 or higher.
 ### API host
 | Environment   | Base URL                                             |
 | -------------------- |---------------------------------------------------|
-| Sandbox          | https://api-sandbox.earthport.com|
-| Integration      | https://api-integration.earthport.com                 |
-| Production      | https://api.earthport.com                 |
+| Sandbox          | `https://api-sandbox.earthport.com`|
+| Integration      | `https://api-integration.earthport.com`|
+| Production      | `https://api.earthport.com`                 |
 
 ### Authorization
 

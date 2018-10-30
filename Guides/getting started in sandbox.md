@@ -7,7 +7,7 @@ Applications must be tested against the Sandbox environment before being used in
 #### Differences from production environment
 
 * The Sandbox contains only test data and is completely separate from your production account.
-* All API endpoints have a base URL of https://api-sandbox.earthport.com instead of https://api.earthport.com
+* All API endpoints have a base URL of `https://api-sandbox.earthport.com` instead of `https://api.earthport.com`
 * Actual money is **not** sent or received as part of test transactions.
 * No compliance checks are performed against the test transactions such as automated AML checks.
 
