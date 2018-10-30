@@ -16,7 +16,7 @@ Earthport uses the [ISO 4217 3 letter currency code](https://en.wikipedia.org/wi
 
 Where an API contains a field referring to a country then it requires a country code.
 
-Earthpotr uses the [ISO 3166 2 letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). e.g. GB, US, CH
+Earthport uses the [ISO 3166 2 letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). e.g. GB, US, CH
 
 ### Amounts
 

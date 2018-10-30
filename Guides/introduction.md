@@ -19,7 +19,7 @@ We recommend that you:-
 
 ### How to download SDKs
 
-At the top left hand coner of this documentation, is a list box of supported languages:
+At the top left hand corner of this documentation, is a list box of supported languages:
 
 ![alt text](https://raw.githubusercontent.com/Earthport/rest-api-docs/master/images/list_languages.png "List of programming languages")
 
