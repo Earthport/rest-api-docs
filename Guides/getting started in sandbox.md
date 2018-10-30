@@ -13,4 +13,4 @@ Applications must be tested against the Sandbox environment before being used in
 
 Please note: **Real financial data should never be used in the Sandbox.**
 
-Please read the suggested [Developer testing steps](docs#/http/guides/introduction/Developer%20testing%20steps)
+Please read the suggested [Developer testing steps](1_0_0#/http/guides/introduction/Developer%20testing%20steps)
