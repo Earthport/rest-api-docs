@@ -8,7 +8,7 @@ Webhooks are sent asynchronously and are not guaranteed to be delivered in order
 
 * You must use SSL/TLS for webhook URLs. Unsecured webhook URLs are only allowed in the sandbox environment.
 * Webhooks include an Origin header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
-* Webhooks with an invalid signature must return a 498 Token Invalid error.
+* If you are validating webhook signatures then your endpoint should return a 498 Token Invalid error, should the signature be invalid.
 * You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91)
 
 
