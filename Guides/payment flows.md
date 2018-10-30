@@ -25,13 +25,13 @@ The flow below lists the *minimum* service calls required to generate a payment:
 | 3 | POST /users/{epUserID}/bank-accounts/{epBankID}/payments	| Creates the payment instruction from the payer to the beneficiary. Returns epTransactionID for the transaction created |
 
 As you can see, they need to be run in this specific order, given that each call requires the output from the previous call. In other words, a beneficiary is linked to a user and a payment is linked to both the user and the beneficiary. 
-Below is a diagram that shows a proposed flow of actions on your application triggering / processing the response of these services
+Below is a diagram that shows a proposed flow of actions on your application triggering / processing the response of these services:
 
 ![alt text](https://cdn.rawgit.com/Earthport/rest-api-docs/master/images/RestAPI-Payments-Granular-minimum.svg "Payment service (minimum flow)")
 
 ### Recommended Payment service flow (with dynamic screens)
 
-The flow below includes additional optional services recommended to improve customer experience by providing tailored screens that prompt only for the required information:
+The flow below includes additional optional services recommended to improve the customer experience by providing tailored screens that prompt only for the required information:
 
 | # | API call | Notes |
 | - | ----------- | --------- |
@@ -42,12 +42,12 @@ The flow below includes additional optional services recommended to improve cust
 | 5 | POST /users/{epUserID}/bank-accounts/{epBankID}/payments | Creates the payment instruction from the payer to the beneficiary Returns epTransactionID for the transaction created |
 
 There are two metadata calls. The first one takes only country and currency and returns the elements related to the identity of payer and beneficiary, as well as the specific bank account requirements for that route. The second one, relies on pre-registered payer and beneficiary and returns specific payment data that is required for that combination of identities and route. For example, the Purpose of Payment may be required if the beneficiary is a Legal Entity but not for remittance transactions (where both payer and beneficiary are individuals).
-Below is a diagram that shows a proposed flow of actions on your application triggering / processing the response of these services
+Below is a diagram that shows a proposed flow of actions on your application triggering / processing the response of these services:
 
 ![alt text](https://cdn.rawgit.com/Earthport/rest-api-docs/master/images/RestAPI-Payments-Granular-dynamic.svg "Payment service (recommended flow)")
 
 ### Payment service flow (with hardcoded screens)
 
-Using the metadata requests to create dynamic screens is our recommended option as it ensures your system is always up-to-date with the latest updates made in out platform with maintenance overhead. However, we understand this is not always possible or may need to be deferred to a later phase. In that event, an alternative to provide similar customer experience is to hardcode all the data requirements in your app and use a flow like the one below:
+Using the metadata requests to create dynamic screens is our recommended option as it ensures your system is always up-to-date with the latest updates made in our platform without the maintenance overhead. However, we understand this is not always possible or may need to be deferred to a later phase. In that event, an alternative to provide similar customer experience is to hardcode all the data requirements in your app and use a flow like the one below:
 
 ![alt text](https://cdn.rawgit.com/Earthport/rest-api-docs/master/images/RestAPI-Payments-Granular-hardcoded.svg "Payment service (hardcoded screen flow)")
