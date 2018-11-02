@@ -8,14 +8,16 @@ Some 4xx errors that could be handled programmatically (e.g., a bank account is 
 
 | Code        | Description           |
 | ---------------|-------------------------- |
-| **200**   | OK. Successful request. | 
+| **200**   | OK. Successful request. |
+| **204**   | OK. Successful request but no response is returned. This is returned by some delete and update APIs. |
 | **400**   | Bad request. Request message data did not pass validation. |
 | **401**   | Unauthorised. Not authorised to access requested data. |
 | **403**   | Forbidden. Access to requested data is forbidden. |
 | **404**   | Not Found. Requested resource does not exist. |
-| **408**   |Timeout. Operation timed out. |
-| **429**   |Too many requests hit the API too quickly. We recommend an exponential backoff of your requests. |
-| **500**   |Earthport server error. |
+| **408**   | Timeout. Operation timed out. |
+| **415**   | Unsupported media type. This is probably due to submitting incorrect data format. e.g. XML instead of JSON. |
+| **429**   | Too many requests hit the API too quickly. We recommend an exponential backoff of your requests. |
+| **500**   | Earthport server error. |
 
 ### Validation errors
 

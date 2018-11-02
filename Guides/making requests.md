@@ -41,7 +41,7 @@ A Content-Type header must be given when sending data to the API (using POST and
 
 For both of these headers, you must give the standard JSON MIME type (application/json).
 
-You will receive an error if you attempt to make a POST/PUT request without this MIME type.
+You will receive an error (HTTP status code=415) if you attempt to make a POST/PUT request without this MIME type.
 
 ### Rate limiting
 
