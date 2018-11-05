@@ -5,7 +5,7 @@ In a nutshell, the payments flow can be summarised as follows:-
 
 The key elements to be captured are:
 * Payer information - identity is the main requirement
-* Beneficiary information - here we need to capture the identity but also the bank account details, of course, so we know where to deliver the money!
+* Beneficiary information - here we need to capture the identity but also the bank account details, so we know where to deliver the money!
 * Payment details - amount, currency, additional references, etc. that are related to this specific payment
 
 Below are some of the most common implementations of this logic in our platform:
@@ -13,6 +13,8 @@ Below are some of the most common implementations of this logic in our platform:
 * Payment service flow (minimum)
 * **Recommended** Payment service flow (with dynamic screens)
 * Payment service flow (with hardcoded screens)
+* Payment service flow with instant FX (locked quote)
+* Payment service flow using composite service
 
 ### Payment service flow (minimum)
 
@@ -25,7 +27,7 @@ The flow below lists the *minimum* service calls required to generate a payment:
 | 3 | POST /users/{epUserID}/bank-accounts/{epBankID}/payments	| Creates the payment instruction from the payer to the beneficiary. Returns epTransactionID for the transaction created |
 
 As you can see, they need to be run in this specific order, given that each call requires the output from the previous call. In other words, a beneficiary is linked to a user and a payment is linked to both the user and the beneficiary. 
-Below is a diagram that shows a proposed flow of actions on your application triggering / processing the response of these services:
+Below is a diagram that shows a *proposed* flow of actions on your application triggering / processing the response of these services:
 
 ![alt text](https://cdn.rawgit.com/Earthport/rest-api-docs/master/images/RestAPI-Payments-Granular-minimum.svg "Payment service (minimum flow)")
 
