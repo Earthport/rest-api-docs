@@ -11,7 +11,13 @@ You will need to ensure you are using TLS v1.2 or higher.
 | Integration      | `https://api-integration.earthport.com`|
 | Production      | `https://api.earthport.com`                 |
 
-### Authorization
+### Authentication and authorization
+Once Earthport has issued you with your **client_id** and **secret** you can then use these to authenticate. Authentication will return a token which has a time to live.
+
+You will need to use this token in each subsequent API call to be authorized.
+
+* Step1: [Authenticate](1_0_0#/http/api-endpoints/authentication/get-access-token)
+* Step2: [Authorization](1_0_0#/http/getting-started/authorizing-your-client)
 
 ### Versioning
 
