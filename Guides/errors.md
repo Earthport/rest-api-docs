@@ -34,19 +34,17 @@ This response will indicate whether the error is a validation type error and it 
   "longMsg": "BeneficiaryBankAccount has failed validation",
   "code": 12000,
   "uniqueErrorID": "1TWZLQGL9ZQUQ",
-  "failures": {
-    "failure": [
-      {
-        "key": "bankAccountDetails.bankName",
-        "code": 12041,
-        "value": "Beneficiary Bank Name not supplied"
-      },
-      {
-        "key": "bankAccountDetails.sortCode",
-        "code": 12201,
-        "value": "Beneficiary Bank Account Sort Code supplied is too long"
-      }
-    ]
-  }
+  "failures": [
+    {
+      "key": "bankAccountDetails.bankName",
+      "code": 12041,
+      "value": "Beneficiary Bank Name not supplied"
+    },
+    {
+      "key": "bankAccountDetails.sortCode",
+      "code": 12201,
+      "value": "Beneficiary Bank Account Sort Code supplied is too long"
+    }
+  ]
 }
 ```
