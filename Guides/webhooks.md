@@ -7,7 +7,7 @@ Earthport can send webhook events that notify your application any time an event
 Webhooks are sent asynchronously and are not guaranteed to be delivered in order. We recommend that applications protect against duplicated events by making event processing idempotent.
 
 * You must use SSL/TLS for webhook URLs. Unsecured webhook URLs are only allowed in the sandbox environment.
-* Webhooks include an Origin header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
+* Webhooks include an *origin* header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
 * If you are validating webhook signatures then your endpoint should return a 498 Token Invalid error, should the signature be invalid.
 * You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91).
 
@@ -16,7 +16,17 @@ Webhooks are sent asynchronously and are not guaranteed to be delivered in order
 
 Earthport signs the body of the POST request with an HMAC SHA256 digest, using the client id and secret key of the client.
 
-This signature is then set in an HTTP Header *Earthport-Signature* along with the HTTP Header *Client-Id*.
+This signature is then set in an HTTP Header *earthport-signature* along with the HTTP Header *client-id*.
+
+We have a [sample Java project on Github](https://github.com/Earthport/Webhook-Signature-Decoder) which shows how the signing algorithm works and how you could decode and verify the signature.
+
+### HTTP Headers
+
+| HTTP Header   | Description                                             | Example |
+| -------------------- |---------------------------------------------------| ------ |
+| client-id          | The client-id is used during authentication with the REST APIs. | y9OJrEnfV6ZHFospsQSeSiJqhfaUD6lH |
+| earthport-signature      | Signature which can be used to verify the notification is valid and from Earthport. | 1544701184264.V38kC60MSXVqZtcNLMr0upPvv0gBPEKlIVfLB0wB1kI= |
+| origin      | The Earthport environment which generated the notification. This is useful when troubleshooting unexpected notifications. Notification are either generated from Production or Sandbox. |  api-integration.earthport.com |
 
 ### Acknowledgement and retries
 
