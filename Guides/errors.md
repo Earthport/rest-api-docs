@@ -15,6 +15,7 @@ Some 4xx errors that could be handled programmatically (e.g., a bank account is 
 | **403**   | Forbidden. Access to requested data is forbidden. |
 | **404**   | Not Found. Requested resource does not exist. |
 | **408**   | Timeout. Operation timed out. |
+| **413**   | Request Entity Too Large. Earthport limits the request payload size to 100KB. |
 | **415**   | Unsupported media type. This is probably due to submitting incorrect data format. e.g. XML instead of JSON. |
 | **429**   | Too many requests hit the API too quickly. We recommend an exponential backoff of your requests. |
 | **500**   | Earthport server error. |
@@ -34,17 +35,19 @@ This response will indicate whether the error is a validation type error and it 
   "longMsg": "BeneficiaryBankAccount has failed validation",
   "code": 12000,
   "uniqueErrorID": "1TWZLQGL9ZQUQ",
-  "failures": [
-    {
-      "key": "bankAccountDetails.bankName",
-      "code": 12041,
-      "value": "Beneficiary Bank Name not supplied"
-    },
-    {
-      "key": "bankAccountDetails.sortCode",
-      "code": 12201,
-      "value": "Beneficiary Bank Account Sort Code supplied is too long"
-    }
-  ]
+  "failures": {
+    "failure": [
+      {
+        "key": "bankAccountDetails.bankName",
+        "code": 12041,
+        "value": "Beneficiary Bank Name not supplied"
+      },
+      {
+        "key": "bankAccountDetails.sortCode",
+        "code": 12201,
+        "value": "Beneficiary Bank Account Sort Code supplied is too long"
+      }
+    ]
+  }
 }
 ```
