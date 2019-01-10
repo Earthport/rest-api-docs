@@ -353,7 +353,7 @@
           "IsArray": false,
           "IsMap": false,
           "Name": "managedMerchantName",
-          "Description": "The name of a managed merchant registered on EarthPort.",
+          "Description": "The name of a managed merchant registered on Earthport.",
           "DefaultValue": ""
         },
         {
@@ -10455,11 +10455,11 @@
     }
   ],
   "CodeGenSettings": {
-    "SynchronyMode": "Asynchronous",
+    "SynchronyMode": "Synchronous",
     "ModelSerializationScheme": "Json",
     "ArraySerialization": "Indexed",
     "Nullify404": false,
-    "UseHttpMethodPrefix": true,
+    "UseHttpMethodPrefix": false,
     "UseModelPrefix": false,
     "UseExceptionPrefix": true,
     "UseEnumPrefix": true,
@@ -10570,6 +10570,11 @@
     {
       "ErrorCode": 500,
       "ErrorMessage": "Earthport server error.",
+      "ErrorTypeName": ""
+    },
+    {
+      "ErrorCode": 413,
+      "ErrorMessage": "Request Entity Too Large. Earthport limits the request payload size to 100KB.",
       "ErrorTypeName": ""
     }
   ],
