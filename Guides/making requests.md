@@ -1,5 +1,3 @@
-## Making requests
-
 The API is only available over HTTPS. Any requests made using HTTP will fail to connect.
 
 You will need to ensure you are using TLS v1.2 or higher.

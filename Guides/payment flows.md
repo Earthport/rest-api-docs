@@ -1,4 +1,3 @@
-## Payment flows
 In a nutshell, the payments flow can be summarised as follows:-
 
 ![alt text](https://raw.githubusercontent.com/Earthport/rest-api-docs/master/images/payment_flow.PNG "Payment flow")

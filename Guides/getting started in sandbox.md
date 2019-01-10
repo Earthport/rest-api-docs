@@ -1,5 +1,3 @@
-## Getting started in sandbox
-
 ### Sandbox environment
 The Sandbox environment is a complete replica of the Earthport production environment, supporting all of the same API endpoints. 
 Applications must be tested against the Sandbox environment before being used in production.

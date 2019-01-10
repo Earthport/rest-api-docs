@@ -1,5 +1,3 @@
-## Webhooks
-
 Use webhooks to be notified about events occurring on your account.
 
 Earthport can send webhook events that notify your application any time an event happens on your account. This is especially useful for events - like when a payment is rejected or returned, or when a deposit is made to your account.
