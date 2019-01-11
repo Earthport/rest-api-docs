@@ -49,3 +49,16 @@ This response will indicate whether the error is a validation type error and it 
   }
 }
 ```
+
+A shortened error response can be returned when the error occurs in the API gateway layer rather than within the backend system. 
+
+Examples could be an incorrectly formatted JSON request sent to the API endpoint or an empty request being sent to the endpoint.
+
+```Javascript
+{
+    "timeOfFailure": "2019-01-11T15:32:09.519+00:00",
+    "failureType": "validation",
+    "shortMsg": "Generic validation failure",
+    "longMsg": "Invalid json format: String contains control character."
+}
+```
