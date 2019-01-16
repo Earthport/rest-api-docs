@@ -64,6 +64,24 @@ We need to respond with the following format:
 }
 ```
 
+#### Funding event
+
+```
+{
+  "notificationType": "FUNDING",
+  "epUserID": 3430090146574,
+  "merchantUserIdentity": "Central_EarthportPaymentTest",
+  "epTransactionID": 281474984542458,
+  "timestamp": "2018-10-16T15:04:16.140+00:00",
+  "depositAmount": {
+    "currency": "GBP",
+    "amount": 88888
+  },
+  "transactionDetails": "kklkj8888"
+}
+```
+
+
 #### Rejected Payout event
 
 ```
