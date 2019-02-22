@@ -1,6 +1,6 @@
 ### Time zones / dates
 
-All timestamps are formatted as [ISO 8601 with timezone information](https://en.wikipedia.org/wiki/ISO_8601). For API calls that allow for a timestamp to be specified, we use that exact timestamp. These timestamps look something like 2014-02-27T15:05:06.123Z.
+All timestamps are formatted as [ISO 8601 with timezone information](https://en.wikipedia.org/wiki/ISO_8601). For API calls that allow for a timestamp to be specified, we use that exact timestamp. These timestamps look something like 2014-02-27T15:05:06.123Z. All timestamps are stored in the Earthport payment platform as UTC.
 
 For endpoints that require dates, we expect a date string of the format YYYY-MM-DD, where an example would look like 2014-02-27.
 
