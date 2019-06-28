@@ -9,7 +9,6 @@ Webhooks are sent asynchronously and are not guaranteed to be delivered in order
 * If you are validating webhook signatures then your endpoint should return a 498 Token Invalid error, should the signature be invalid.
 * You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91).
 
-
 ### Signing webhooks
 
 Earthport signs the body of the POST request with an HMAC SHA256 digest, using the client id and secret key of the client.
@@ -44,6 +43,7 @@ We need to respond with the following format:
 ### Webhook event types
 
 #### Deposit event
+A notification is sent when funding is applied to a user VAN.
 
 ```
 {
@@ -65,6 +65,7 @@ We need to respond with the following format:
 ```
 
 #### Funding event
+A notification is sent when funding is applied to the merchant's central VAN.
 
 ```
 {
@@ -83,6 +84,7 @@ We need to respond with the following format:
 
 
 #### Rejected Payout event
+A notification is sent when a payment is rejected by Earthport or a banking partner.
 
 ```
 {
@@ -111,6 +113,7 @@ We need to respond with the following format:
 ```
 
 #### Refund event
+A notification is sent when a payment is returned from the beneficiary bank.
 
 ```
 {
@@ -137,8 +140,10 @@ We need to respond with the following format:
   "reasonID": 111
 }
 ```
+For the full list of [Reason codes](https://docs.earthport.com/v/1_0_0#/http/guides/reason-codes).
 
 #### Payment Sent event
+A notification is sent when a batch is executed.
 
 ```
 {
