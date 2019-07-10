@@ -1,6 +1,4 @@
-Earthport uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the 2xx range indicate success. Codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.). Codes in the 5xx range indicate an error with Earthport's servers.
-
-Some 4xx errors that could be handled programmatically (e.g., a bank account is invalid) include an error code that briefly explains the error reported.
+Earthport uses conventional HTTP response codes to indicate the success or failure of an API request. In general, receiving codes with 2xx series from the server indicate a successful request, receiving codes with 4xx series indicate an error that failed somewhere on the users end - usually due to the information provided (e.g. a required parameter was omitted, a charge failed, etc.) and lastly, receiving codes with 5xx series indicate an error with Earthport's servers. Additionally, some 4xx errors that could be handled programmatically (e.g. a bank account is invalid) include an error code that briefly explains the error reported.
 
 ### HTTP status codes
 
@@ -20,9 +18,9 @@ Some 4xx errors that could be handled programmatically (e.g., a bank account is 
 
 ### Validation errors
 
-Earthport has defined a standard Error Response structure for both validation (4xx) and application errors (5xx).
+Earthport has defined a standard 'Error Response' structure for both validation (i.e. 4xx) and application (i.e. 5xx) errors.
 
-This response will indicate whether the error is a validation type error and it will contain an array listing each validation error.
+This response will indicate whether the error is a validation type error, furthermore it will contain an array listing each validation error.
 
 
 ```javascript

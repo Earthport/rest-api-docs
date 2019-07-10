@@ -1,16 +1,14 @@
-The Earthport API is organised around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. 
+We at Earthport provide all our clients with our [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)ful API service - it's easy to use, has predictable resource-oriented URLs, and demonstrates the use of HTTP response codes in order to indicate any API errors that may occur. 
 
-We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. We support [cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), allowing you to interact securely with our API from a client-side web applications.
+We use built-in HTTP features such as HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. Furthermore, we support [cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), allowing you to interact securely with our API from client-side web applications. However we strongly advise that you _NEVER_ expose your secret API key in any public website's client-side code. 
 
-You should never expose your secret API key in any public website's client-side code. 
-
-JSON is returned by all API responses, including errors, although our API libraries convert responses to appropriate language-specific objects.
+The default file format returned by every API response is JSON - including errors, although our API libraries convert responses to appropriate language-specific objects.
 
 ### Developer testing steps
 
-We recommend that you:-
+We recommend that you:
 
-1. Read our API documentation first (see [Payment Flows](1_0_0#/http/guides/payment-flows))
+1. Start by reading our API documentation first (see [Payment Flows](1_0_0#/http/guides/payment-flows))
 2. Download and use our [Postman collection](https://github.com/Earthport/rest-api-postman) to understand our data types and use cases (these contain sample requests)
 3. Download the appropriate language SDK and call our APIs from your local developer machine
 4. You can test our webhooks using the simulator
@@ -18,7 +16,7 @@ We recommend that you:-
 
 ### How to download SDKs
 
-At the top left hand corner of this documentation, is a list box of supported languages:
+At the top left hand corner of this documentation is a list box of supported languages:
 
 ![alt text](https://raw.githubusercontent.com/Earthport/rest-api-docs/master/images/list_languages.png "List of programming languages")
 

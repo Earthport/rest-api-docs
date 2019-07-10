@@ -1,4 +1,4 @@
-A number of resources have support for pagination of responses. These list APIs will share a common structure by taking the following parameters: *sortOrder*, *offset* and *pageSize*
+A number of resources have support for pagination of responses. These list of APIs share a common structure by taking the following parameters: "sortOrder", "offset" and "pageSize".
 
 ### Arguments
 ***

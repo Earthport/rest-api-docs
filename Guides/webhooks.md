@@ -1,19 +1,19 @@
-Use webhooks to be notified about events occurring on your account.
+Webhooks are used to be notified about events occurring on your account.
 
-Earthport can send webhook events that notify your application any time an event happens on your account. This is especially useful for events - like when a payment is rejected or returned, or when a deposit is made to your account.
+Earthport can send webhook events that notify your application any time an event happens on your account. This is especially useful for events, for instance when a payment is rejected or returned, or when a deposit is made to your account.
 
 Webhooks are sent asynchronously and are not guaranteed to be delivered in order. We recommend that applications protect against duplicated events by making event processing idempotent.
 
 * You must use SSL/TLS for webhook URLs. Unsecured webhook URLs are only allowed in the sandbox environment.
-* Webhooks include an *Earthport-Origin* header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
-* If you are validating webhook signatures then your endpoint should return a 498 Token Invalid error, should the signature be invalid.
-* You may optionally choose to  white list Earthport's webhook IP addresses (52.210.35.14 & 34.242.162.91).
+* Webhooks include an 'Earthport-Origin' header indicating which Earthport environment they were sent from. This will be `https://api.earthport.com` for production, and `https://api-sandbox.earthport.com` for sandbox.
+* If you are validating webhook signatures then your endpoint should return a "498 Token Invalid" error - should the signature be invalid.
+* You may optionally choose to  whitelist Earthport's webhook IP addresses (52.210.35.14 or 34.242.162.91).
 
 ### Signing webhooks
 
-Earthport signs the body of the POST request with an HMAC SHA256 digest, using the client id and secret key of the client.
+Earthport signs the body of the POST request with an HMAC SHA256 digest, using the client_id and secret key of the client.
 
-This signature is then set in an HTTP Header *Earthport-Signature* along with the HTTP Header *Earthport-Client-Id*.
+This signature is then set in an HTTP Header "Earthport-Signature" along with the HTTP Header "Earthport-Client-Id".
 
 We have a [sample Java project on Github](https://github.com/Earthport/Webhook-Signature-Decoder) which shows how the signing algorithm works and how you could decode and verify the signature.
 
@@ -21,7 +21,7 @@ We have a [sample Java project on Github](https://github.com/Earthport/Webhook-S
 
 | HTTP Header   | Description                                             | Example |
 | -------------------- |---------------------------------------------------| ------ |
-| Earthport-Client-Id          | The client-id is used during authentication with the REST APIs. | y9OJrEnfV6ZHFospsQSeSiJqhfaUD6lH |
+| Earthport-Client-Id          | The client_id is used during authentication with the REST APIs. | y9OJrEnfV6ZHFospsQSeSiJqhfaUD6lH |
 | Earthport-Signature      | Signature which can be used to verify the notification is valid and from Earthport. | 1544701184264.V38kC60MSXVqZtcNLMr0upPvv0gBPEKlIVfLB0wB1kI= |
 | Earthport-Origin      | The Earthport environment which generated the notification. This is useful when troubleshooting unexpected notifications. Notifications are either generated from Production or Sandbox. |  api-sandbox.earthport.com |
 
@@ -113,7 +113,7 @@ A notification is sent when a payment is rejected by Earthport or a banking part
 ```
 
 #### Refund event
-A notification is sent when a payment is returned from the beneficiary bank.
+A notification is sent when a payment is returned from the beneficiary bank, which then initiates a refund.
 
 ```
 {
@@ -140,7 +140,7 @@ A notification is sent when a payment is returned from the beneficiary bank.
   "reasonID": 111
 }
 ```
-For the full list of [Reason codes](https://docs.earthport.com/v/1_0_0#/http/guides/reason-codes).
+For further information on [Reason codes](https://docs.earthport.com/v/1_0_0#/http/guides/reason-codes).
 
 #### Payment Sent event
 A notification is sent when a batch is executed.

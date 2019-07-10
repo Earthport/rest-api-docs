@@ -1,24 +1,24 @@
 ### Time zones / dates
 
-All timestamps are formatted as [ISO 8601 with timezone information](https://en.wikipedia.org/wiki/ISO_8601). For API calls that allow for a timestamp to be specified, we use that exact timestamp. These timestamps look something like 2014-02-27T15:05:06.123Z. All timestamps are stored in the Earthport payment platform as UTC.
+All timestamps are formatted as [ISO 8601 with timezone information](https://en.wikipedia.org/wiki/ISO_8601). For API calls that allow for a timestamp to be specified, we use that exact timestamp. These timestamps look something like "2014-02-27T15:05:06.123Z". All timestamps are stored in Earthport's payment platform as UTC.
 
-For endpoints that require dates, we expect a date string of the format YYYY-MM-DD, where an example would look like 2014-02-27.
+For endpoints that require dates, we expect a date string format of "YYYY-MM-DD" (e.g. 2014-02-27).
 
 ### Currencies
 
-Wherever an API contains a field referring to a currency then it requires a currency code. 
+Wherever an API contains a field referring to a currency, then it requires a currency code. 
 
-Earthport uses the [ISO 4217 3 letter currency code](https://en.wikipedia.org/wiki/ISO_4217). e.g. USD, GBP, EUR
+Earthport uses the [ISO 4217 3 letter currency code](https://en.wikipedia.org/wiki/ISO_4217) (e.g. USD, GBP, EUR).
 
 ### Countries
 
-Where an API contains a field referring to a country then it requires a country code.
+Where an API contains a field referring to a country, then it requires a country code.
 
-Earthport uses the [ISO 3166 2 letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). e.g. GB, US, CH
+Earthport uses the [ISO 3166 2 letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) (e.g. GB, US, CH).
 
 ### Amounts
 
-The REST API represents financial amounts as decimals. However, Earthport's backend system converts this into a Monetary Amount class taking into account the number of decimal places for the specific currency and using a Java BigDecimal to handle floating point precision.
+The REST API represents financial amounts as decimals. However, Earthport's backend system converts this into a 'Monetary Amount' class, which takes into account the number of decimal places for the specific currency and uses Java BigDecimal to handle floating point precision.
 
 ### Encoding
 

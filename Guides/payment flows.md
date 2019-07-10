@@ -1,10 +1,10 @@
-In a nutshell, the payments flow can be summarised as follows:-
+In a nutshell, the payments flow can be summarised as followed:
 
 ![alt text](https://raw.githubusercontent.com/Earthport/rest-api-docs/master/images/payment_flow.PNG "Payment flow")
 
 The key elements to be captured are:
 * Payer information - identity is the main requirement
-* Beneficiary information - here we need to capture the identity but also the bank account details, so we know where to deliver the money!
+* Beneficiary information - identity is needed with the addition of bank account details, from this we'll know where to send the money. 
 * Payment details - amount, currency, additional references, etc. that are related to this specific payment
 
 Below are some of the most common implementations of this logic in our platform:

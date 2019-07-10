@@ -1,6 +1,6 @@
-The API is only available over HTTPS. Any requests made using HTTP will fail to connect.
+The API is only available over HTTPS - any requests made using HTTP will fail to connect.
 
-You will need to ensure you are using TLS v1.2 or higher.
+**Note**: you will need to ensure you are using TLS v1.2 or higher.
 
 ### API host
 | Environment   | Base URL                                             |
@@ -35,11 +35,11 @@ Earthport considers the following changes to be backwards-compatible:
 ### MIME types
 All requests and responses are JSON-formatted and UTF-8 encoded.
 
-An Accept header is required for all requests, for example:
+An 'Accept' header is required for all requests, for example:
 
 > Accept: application/json
 
-A Content-Type header must be given when sending data to the API (using POST and PUT endpoints), for example:
+A 'Content-Type' header must be given when sending data to the API (using POST and PUT endpoints), for example:
 
 > Content-Type: application/json
 
@@ -49,7 +49,7 @@ You will receive an error (HTTP status code=415) if you attempt to make a POST/P
 
 ### Rate limiting
 
-TBD
+_To be decided ..._
 
 #### HTTP Headers and Response Codes
 Each response has HTTP headers that provide data on where your application is at for a given rate limit.
@@ -60,18 +60,14 @@ Each response has HTTP headers that provide data on where your application is at
 
 **X-Rate-Limit-Reset:** the remaining window before the rate limit resets
 
-When the rate limit is applied the API will return status code HTTP 429 Too Many Requests. In which case you should wait 60 seconds before retrying.
+When the rate limit is applied the API will return a status code of "429 Too Many Requests". In which case you should wait 60 seconds before retrying.
 
 ### Whitelisted IP addresses
 
-By default, your application can perform API calls from any IP address. By configuring whitelisted IP addresses for your application, you can control the source IP addresses for the API calls made by your application. In this case Earthport will reject any API calls made with your application credentials from any other IP address with an HTTP status code 401 Unauthorized.
+By default, your application can perform API calls from any IP address. By configuring whitelisted IP addresses for your application, you can control the source IP addresses for the API calls made by your application. In this case Earthport will reject any API calls made with your application credentials from any other IP address with a status code of "401 Unauthorized".
 
 **Warning** - If you misconfigure whitelisted IP addresses, your application will be broken.
 
-Please note:-
-
+Please note:
 * IP addresses should use only IPv4 format e.g. 192.168.100.14
 * IP ranges should use [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation) e.g. 192.168.100.0/24 which would include 192.168.100.0 up to 192.168.100.255
-
-
-
