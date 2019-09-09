@@ -3,6 +3,11 @@ All notable changes to both the APIs and the documentation will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2019-09-06
+### Changed
+- Fixed an error that was caused when supplying an integer, instead of a string, into the key values of "Add bank account" API. This was changed so that only a string will be accepted for all value fields. 
+- Fixed an error that was caused when supplying long account numbers (ie. Morocco account numbers can be up to 24 digits), where a client provided the example "190170211401005132000877", this was then appearing in scientific notation (eg. 1.2345678901234568e+39) when using "Get bank account" API. This has been changed so that it returns as a string without losing any digits.
+
 ## [1.0.3] - 2019-06-06
 ### Added
 - "Reason codes" section under Guides. 
