@@ -1,7 +1,18 @@
-All notable changes to both the APIs and the documentation will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+All notable changes to both the APIs and the documentation will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.7] - 2020-03-19
+### Added
+- "Payment overview" section under Guides. 
+
+## [1.0.6] - 2019-11-28
+### Changed
+- Changed the spelling of 'Respone' to 'Response' within the structure 'Payments Registered Beneficiary Create Response' 
+
+## [1.0.5] - 2019-11-26
+### Changed
+- Changed the "IgnoreIfNullJson" field value from 'false' to 'true' within the API settings.
+- Changed the field name 'Key' and 'Value' within the 'Additional Data' page to lowercase in the beginning located in the 'HTTP' section. 
 
 ## [1.0.4] - 2019-09-06
 ### Changed
