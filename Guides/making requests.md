@@ -10,18 +10,18 @@ The API is only available over HTTPS - any requests made using HTTP will fail to
 | Production      | `https://api.earthport.com`                 |
 
 ### Authentication and authorization
-Once Earthport has issued you with your **client_id** and **client_secret** you can then use these to authenticate. Authentication will return a token which has a time to live.
+Once Visa Payments Limited has issued you with your **client_id** and **client_secret** you can then use these to authenticate. Authentication will return a token which has a time to live.
 
 You will need to use this token in each subsequent API call to be authorized.
 
-* Step1: [Authenticate](1_0_0#/http/api-endpoints/authentication/get-access-token)
-* Step2: [Authorization](1_0_0#/http/getting-started/authorizing-your-client)
+* Step1: [Authenticate](#/http/api-endpoints/authentication/get-access-token)
+* Step2: [Authorization](#/http/getting-started/authorizing-your-client)
 
 ### Versioning
 
 When we make backwards-incompatible changes to the API, we will release a new version. The current version is v1.
 
-Earthport considers the following changes to be backwards-compatible:
+Visa Payments Limited considers the following changes to be backwards-compatible:
 
 * Adding new API resources.
 * Adding new optional request parameters to existing API methods.
@@ -64,7 +64,7 @@ When the rate limit is applied the API will return a status code of "429 Too Man
 
 ### Whitelisted IP addresses
 
-By default, your application can perform API calls from any IP address. By configuring whitelisted IP addresses for your application, you can control the source IP addresses for the API calls made by your application. In this case Earthport will reject any API calls made with your application credentials from any other IP address with a status code of "401 Unauthorized".
+By default, your application can perform API calls from any IP address. By configuring whitelisted IP addresses for your application, you can control the source IP addresses for the API calls made by your application. In this case Visa Payments Limited will reject any API calls made with your application credentials from any other IP address with a status code of "401 Unauthorized".
 
 **Warning** - If you misconfigure whitelisted IP addresses, your application will be broken.
 

@@ -191,4 +191,4 @@ This is also referred to as the ReasonID. A notification is sent when a Rejected
 **200**|Invalid Identity Information – CCI |
 **203**|Payment has not been mandated
 
-For more information, refer to [Rejected Payout event](1_0_0#/http/guides/webhooks/webhook-event-types/rejected-payout-event) and [Refund event](1_0_0#/http/guides/webhooks/webhook-event-types/refund-event) under webhooks.
+For more information, refer to [Rejected Payout event](#/http/guides/webhooks/webhook-event-types/rejected-payout-event) and [Refund event](#/http/guides/webhooks/webhook-event-types/refund-event) under webhooks.

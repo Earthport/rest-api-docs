@@ -11,8 +11,8 @@ pageSize    - Number of returned resources per page.
 
 ### APIs using pagination
 
-[List all bank accounts](1_0_0#/http/api-endpoints/beneficiary-bank-accounts/list-bank-accounts)
+[List all bank accounts](#/http/api-endpoints/beneficiary-bank-accounts/list-bank-accounts)
 
-[Search transactions](1_0_0#/http/api-endpoints/transactions/search-transactions)
+[Search transactions](#/http/api-endpoints/transactions/search-transactions)
 
-[View a statement of transactions](1_0_0#/http/api-endpoints/statements/get-statement)
+[View a statement of transactions](#/http/api-endpoints/statements/get-statement)

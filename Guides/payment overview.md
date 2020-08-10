@@ -3,7 +3,7 @@ The Visa Payments Limited platform enables bank transfer remitting capability to
 ![alt text](https://raw.githubusercontent.com/Earthport/rest-api-docs/master/images/overview_of_payments_limited_solution.png)
 
 ### End-to-end process flow
-To access the Global ACH network the client has multiple options. The Client API allows full integration with web services for a synchronous and interactive user experience, as the services can be integrated with the client’s own system such that the user sees them as being part of the client’s overall offering - more details can be found under the [Payment Flows](https://docs.earthport.com/v/1_0_0#/http/guides/payment-flows) section. 
+To access the Global ACH network the client has multiple options. The Client API allows full integration with web services for a synchronous and interactive user experience, as the services can be integrated with the client’s own system such that the user sees them as being part of the client’s overall offering - more details can be found under the [Payment Flows](#/http/guides/payment-flows) section. 
 
 The diagrams illustrate the minimum flow required, which involves 3 steps:
 * registering a user
@@ -20,7 +20,7 @@ A user can be identified as
 2. The remitter of a payment to a Contracting Merchant or Managed Merchant.
 
 #### Central Virtual Accounts
-In order to manage payments in the platform, the client is assigned a central account through which the funding of all transactions will ultimately flow. There may be a direct link between the client and the user, or there may be an additional layer between “Client” and the beneficiary (or remitter of a collection), and this is explained in the [Client Aggregation Model](1_0_0#/http/guides/payment-overview/the-client-aggregation-model) section.
+In order to manage payments in the platform, the client is assigned a central account through which the funding of all transactions will ultimately flow. There may be a direct link between the client and the user, or there may be an additional layer between “Client” and the beneficiary (or remitter of a collection), and this is explained in the [Client Aggregation Model](#/http/guides/payment-overview/the-client-aggregation-model) section.
 
 The client account is the source of funds for satisfying payment remittance requests and as such must have sufficient liquidity to cover the requested payment total. When the central account does not hold sufficient funds in the specific currency in order to cover payment requests such payments are still accepted but kept on hold until sufficient funds are received. The central account balance reflects the client’s real-world funding position and can be inspected using reports provided in the online Merchant Administration System (MAS) or via the API services Get Balance and Get Statement.
 
@@ -40,7 +40,7 @@ Typically, this structure is used by organisations that manage multiple business
 #### The Levels
 1. Contracting Merchant – The entity with which Visa Payments Limited holds a contract to provide Payment Services.
 2. Managed Merchant – These can be subsidiary companies or business areas of the Contracting Merchant. These have autonomous control of those users which are attached to each account. These are optional for Contracting Clients.
-3. User – These are individual accounts from which payments or collections can be transacted. Each user can hold any number of accounts in any of the currencies supported by Earthport.
+3. User – These are individual accounts from which payments or collections can be transacted. Each user can hold any number of accounts in any of the currencies supported by Visa Payments Limited.
 4. Beneficiary – This is the detail of a beneficiary to which a user is entitled to make payments. An unlimited number of beneficiaries may be applied to each user.
 
 Each Contracting or Managed Merchant can be assigned its own set of API credentials so that the Managed Merchant account can be accessed from within Managed Merchant’s own system. If a user account is created using a Managed Merchant’s API credentials then the account will be created under this managed merchant, this applies also to payments and collections.

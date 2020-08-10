@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.1] - 2019-02-26
 ### Changed
 - Fixed authentication endpoint so that it returns a valid OAuth token type. token_type is now "Bearer" rather than "BearerToken".
-- Renamed managedMerchantIdentity to managedMerchantName in [User](https://docs.earthport.com/v/1_0_0#/http/models/structures/user) to be consistent with other endpoints.
+- Renamed managedMerchantIdentity to managedMerchantName in [User](#/http/models/structures/user) to be consistent with other endpoints.
 - Added max length for VAN(13)
 - Added max length for managedMerchantName(30)
 - Added max length for merchantUserID(100)
