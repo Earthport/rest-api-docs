@@ -1,6 +1,47 @@
 All notable changes to both the APIs and the documentation will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2020-11-30
+### Added
+- Field "dateSentToBank" to 'Payout Transaction' structure page.
+
+### Changed
+- Data Type to 'Object' for "amountRefundedByBank", "amountRefundedToCustomer", "reason" and "originalPayoutTransaction" fields within 'Refund Transaction' structure page. 
+- Data Type to 'Object' for "refundPayoutID" field within 'Payout Transaction' structure page. 
+
+## [1.1.1] - 2020-11-11
+### Added
+- Fields such as "refundPayoutID" and "fxExecutedDetail" to 'Payout Transaction' structure page.
+- Fields such as "fxExecutedDetail", "amountRefundedByBank", "amountRefundedToCustomer", "reason" and "originalPayoutTransaction" to 'Refund Transaction' structure page.
+- "description" field to 'Journal Transaction' and 'Merchant Liquidity Movement Transaction' structure page.
+
+### Changed
+- "Key" / "Value" fields to lowercase for 'Unstructured Identity' structure page.
+
+### Removed
+- "description" field from 'Financial Transaction' structure page. 
+
+## [1.1.0] - 2020-09-28
+### Changed
+- Description within 'Additional Data' structure page.
+
+## [1.0.9] - 2020-08-20
+### Added
+- Fields such as "feeValue", "fxMethodExpected" and "fxRate" to 'Payments Registered Beneficiary Create Response' structure page.
+
+### Changed
+- Description within 'Beneficiary Bank Account Create Request' structure page.
+- Description for 'payerIdentity' field within 'Users Create or Validate Request'.
+
+## [1.0.8] - 2020-08-07
+### Added
+- "Unstructured Identity Examples" section under Guides. 
+- "Unstructured Key Names" page under Enumerations.
+
+### Changed
+- Images within the 'Introduction' guide section to match API Documentation.
+- Description of 'Key' field as a link to attach "Unstructured Key Names" enumerator within 'Unstructured Identity' page.
+
 ## [1.0.7] - 2020-03-19
 ### Added
 - "Payment overview" section under Guides. 
